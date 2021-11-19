@@ -1,0 +1,28 @@
+version: '3.1'
+
+services: 
+  web:
+    image: my_node_app
+    build: 
+      context: .
+      dockerfile: Dockerfile_node_project
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - ./:/usr/src/app
+    networks: 
+      - testing_network
+  my_mongo:
+    image: mongo
+    ports: 
+      - '27017:27017'
+    volumes: 
+      - mongo-data:/data/db
+    networks: 
+      - testing_network
+
+networks:
+  testing_network:
+
+volumes: 
+  mongo-data:

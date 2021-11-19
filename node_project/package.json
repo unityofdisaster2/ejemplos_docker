@@ -1,0 +1,21 @@
+{
+  "name": "proyecto_basico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raymundo Rosales",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.1",
+    "mongoose": "^6.0.13"
+  }
+}

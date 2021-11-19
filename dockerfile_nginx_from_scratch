@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
+
+RUN apt-get update && apt-get upgrade -y && apt-get install build-essential curl iputils-ping nginx -y  
+
+WORKDIR /var/www/html
+
+COPY index.html index.nginx-debian.html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
