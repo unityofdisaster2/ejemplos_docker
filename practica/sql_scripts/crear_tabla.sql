@@ -7,3 +7,5 @@ CREATE TABLE IF NOT EXISTS PERSON(
   name VARCHAR(100) not null,
   country VARCHAR(100) not null 
 );
+
+GRANT ALL on TestDB.* to test_user@'%';
