@@ -1,0 +1,9 @@
+FROM mysql
+
+ENV MYSQL_ROOT_PASSWORD pass
+
+ENV MYSQL_USER test_user
+
+ENV MYSQL_PASSWORD pru3b4s
+
+COPY ./sql_scripts/ /docker-entrypoint-initdb.d/

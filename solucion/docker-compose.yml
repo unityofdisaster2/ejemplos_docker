@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  my_database:
+    image: custom_mysql:0.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile_mysql
+    networks:
+      - my_custom_network
+    volumes:
+      - mysql-data:/var/lib/mysql
+  my_application:
+    image: my_tomcat_app:0.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    networks:
+      - my_custom_network
+
+networks:
+  my_custom_network:
+
+volumes:
+  mysql-data:
